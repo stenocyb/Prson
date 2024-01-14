@@ -1,0 +1,14 @@
+- command: socialscan $INPUT --verbose | grep -i 'checked' > $OUTPUT_DIR/$INPUT_socialscan.txt
+  type: email
+- command: zehef.sh $INPUT | grep -Ev "^#|^$" > $OUTPUT_DIR/$INPUT_zehef.txt
+  type: email
+- command: inspector.sh $INPUT | grep -Ev "^#|^$" > $OUTPUT_DIR/$INPUT_inspector.txt
+  type: phone
+- command: phoneinfoga scan -n $INPUT | grep -Ev "^#|^$" > $OUTPUT_DIR/$INPUT_phoneinfoga.txt
+  type: phone
+- command: social-analyzer --username $INPUT > $OUTPUT_DIR/$INPUT_social-analyzer.txt
+  type: username
+- command: sherlock --output $OUTPUT_DIR/$INPUT_sherlock.txt $INPUT
+  type: username
+- command: socialscan $INPUT --verbose | grep -i 'checked' > $OUTPUT_DIR/$INPUT_socialscan.txt
+  type: username

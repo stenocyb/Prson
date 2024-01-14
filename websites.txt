@@ -1,0 +1,16 @@
+- url: https://emailrep.io/
+  type: email
+  request_type: POST
+  field_attribute: id
+  field_value: search-input
+  field_input: "$INPUT"
+- url: https://haveibeenpwned.com/
+  type: email
+  request_type: POST
+  field_attribute: name
+  field_value: Account
+  field_input: "$INPUT"
+- url: https://google.com/search?q=$INPUT
+  type: email
+  request_type: GET
+
