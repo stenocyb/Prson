@@ -50,7 +50,7 @@ def execute_commands(input_variable: str, commands_file: str, type: str):
     for command in content:
         print(os.popen(str(command).replace('$INPUT', input_variable).replace('$OUTPUT_DIR', output_directory)).read())
 
-## Fills out a form on a specific website using Firefox browser
+## Fills out a form on a specific website using a browser
 def fill_out_form(link: str, field_attribute: str, field_value: str, field_input: str, driver):
     driver.get(url=link)
     form = driver.find_element(field_attribute, field_value)
@@ -149,11 +149,11 @@ def lookup_email(email: str, only_commands: bool, only_websites: bool, browser: 
                 execute_commands(email, commands_file, 'email')
 
                 if not only_commands:
-                    if ask_polar_question('Do you want to start Firefox in order to perform online information gathering?'):
+                    if ask_polar_question('Do you want to start your browser in order to perform online information gathering?'):
                         read_websites_file_and_visit(websites_file, 'email', email, browser)
         else:
             if not only_commands:
-                if ask_polar_question('Do you want to start Firefox in order to perform online information gathering?'):
+                if ask_polar_question('Do you want to start your browser in order to perform online information gathering?'):
                     read_websites_file_and_visit(websites_file, 'email', email, browser)
             else:
                 print('Error: Conflicting command line options, -w and -c can not be used together.')
@@ -178,11 +178,11 @@ def lookup_phone_number(number: str, only_commands: bool, only_websites: bool, b
                 execute_commands(number, commands_file, 'phone')
 
                 if not only_commands:
-                    if ask_polar_question('Do you want to start Firefox in order to perform online information gathering?'):
+                    if ask_polar_question('Do you want to start your browser in order to perform online information gathering?'):
                         read_websites_file_and_visit(websites_file, 'phone', number, browser)
         else:
             if not only_commands:
-                if ask_polar_question('Do you want to start Firefox in order to perform online information gathering?'):
+                if ask_polar_question('Do you want to start your browser in order to perform online information gathering?'):
                     read_websites_file_and_visit(websites_file, 'phone', number, browser)
             else:
                 print('Error: Conflicting command line options, -w and -c can not be used together.')
@@ -207,11 +207,11 @@ def lookup_username(username: str, only_commands: bool, only_websites: bool, bro
                 execute_commands(username, commands_file, 'username')
                 
                 if not only_commands:
-                    if ask_polar_question('Do you want to start Firefox in order to perform online information gathering?'):
+                    if ask_polar_question('Do you want to start your browser in order to perform online information gathering?'):
                         read_websites_file_and_visit(websites_file, 'username', username, browser)
         else:
             if not only_commands:
-                if ask_polar_question('Do you want to start Firefox in order to perform online information gathering?'):
+                if ask_polar_question('Do you want to start your browser in order to perform online information gathering?'):
                         read_websites_file_and_visit(websites_file, 'username', username, browser)
             else:
                 print('Error: Conflicting command line options, -w and -c can not be used together.')
